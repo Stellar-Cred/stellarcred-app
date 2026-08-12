@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="docs/logo.png" alt="StellarCred logo" width="120">
+</p>
+
 # StellarCred App
 
 **On-chain behavioral reputation and credential protocol on Stellar Soroban — public reputation profiles and credential explorer**
