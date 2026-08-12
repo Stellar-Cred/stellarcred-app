@@ -2,7 +2,7 @@
 
 **On-chain behavioral reputation and credential protocol on Stellar Soroban — public reputation profiles and credential explorer**
 
-![Next.js](https://img.shields.io/badge/Next.js-14-black?logo=next.js)
+![Next.js](https://img.shields.io/badge/Next.js-16-black?logo=next.js)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?logo=typescript&logoColor=white)
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind-3-38BDF8?logo=tailwindcss&logoColor=white)
 ![Stellar](https://img.shields.io/badge/Stellar-Network-08B5E5?logo=stellar)
@@ -24,26 +24,16 @@ own profile.
 
 ## Tech Stack
 
-- Next.js 14 (App Router)
+- Next.js 16 (App Router, Turbopack)
+- React 19
 - TypeScript 5 (strict)
 - Tailwind CSS 3
-- `@stellar-cred/sdk` for all on-chain reads/writes and the Freighter wallet
-  adapter
+- [`@stellar-cred/sdk`](https://www.npmjs.com/package/@stellar-cred/sdk) for
+  all on-chain reads/writes and the Freighter wallet adapter
 
 ## Local Setup
 
-`@stellar-cred/sdk` is not yet published to npm, so this app depends on it
-via a local `file:../stellarcred-sdk` path — clone it as a sibling
-directory first. `dev`/`build` are pinned to `--webpack` because Turbopack
-(Next 16's default bundler) can't currently resolve dependencies symlinked
-in via `file:` outside its inferred workspace root; switch back to the
-Turbopack defaults once the SDK is published to npm and this becomes a
-normal registry dependency.
-
 ```bash
-git clone git@github.com:Stellar-Cred/stellarcred-sdk.git
-cd stellarcred-sdk && npm install && npm run build && cd ..
-
 git clone git@github.com:Stellar-Cred/stellarcred-app.git
 cd stellarcred-app
 cp .env.example .env.local
@@ -55,7 +45,7 @@ Then open [http://localhost:3000](http://localhost:3000).
 
 ```bash
 npm run typecheck   # tsc --noEmit
-npm run lint         # next lint
+npm run lint         # eslint .
 npm run build         # production build
 ```
 

@@ -29,13 +29,7 @@ Where `type` is one of `feat`, `fix`, `refactor`, `test`, `docs`, or `chore`.
 
 ## Development setup
 
-This app depends on `@stellar-cred/sdk`, which is not yet published to npm.
-Clone it as a sibling directory before installing:
-
 ```bash
-git clone git@github.com:Stellar-Cred/stellarcred-sdk.git
-cd stellarcred-sdk && npm install && npm run build && cd ..
-
 git clone git@github.com:Stellar-Cred/stellarcred-app.git
 cd stellarcred-app
 cp .env.example .env.local   # fill in NEXT_PUBLIC_CONTRACT_ID

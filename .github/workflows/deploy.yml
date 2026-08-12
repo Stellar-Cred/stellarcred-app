@@ -10,42 +10,16 @@ jobs:
     runs-on: ubuntu-latest
     environment: production
     steps:
-      - name: Checkout stellarcred-app
-        uses: actions/checkout@v4
-        with:
-          path: stellarcred-app
-
-      # @stellar-cred/sdk is not yet published to npm, so the app depends on
-      # it via a local `file:../stellarcred-sdk` path. Check out and build
-      # that sibling repo before building/deploying the app.
-      - name: Checkout stellarcred-sdk
-        uses: actions/checkout@v4
-        with:
-          repository: Stellar-Cred/stellarcred-sdk
-          path: stellarcred-sdk
-
-      - name: Install Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 20
-
-      - name: Build SDK dependency
-        working-directory: stellarcred-sdk
-        run: |
-          npm ci
-          npm run build
+      - uses: actions/checkout@v4
 
       - name: Install Vercel CLI
         run: npm install --global vercel@latest
 
       - name: Pull Vercel environment
-        working-directory: stellarcred-app
         run: vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
 
       - name: Build project artifacts
-        working-directory: stellarcred-app
         run: vercel build --prod --token=${{ secrets.VERCEL_TOKEN }}
 
       - name: Deploy to Vercel
-        working-directory: stellarcred-app
         run: vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }}

@@ -15,43 +15,22 @@ jobs:
     name: typecheck, lint, build
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout stellarcred-app
-        uses: actions/checkout@v4
-        with:
-          path: stellarcred-app
-
-      # @stellar-cred/sdk is not yet published to npm, so the app depends on
-      # it via a local `file:../stellarcred-sdk` path. Check out and build
-      # that sibling repo before installing the app's dependencies.
-      - name: Checkout stellarcred-sdk
-        uses: actions/checkout@v4
-        with:
-          repository: Stellar-Cred/stellarcred-sdk
-          path: stellarcred-sdk
+      - uses: actions/checkout@v4
 
       - name: Install Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
+          cache: npm
 
-      - name: Build SDK dependency
-        working-directory: stellarcred-sdk
-        run: |
-          npm ci
-          npm run build
-
-      - name: Install app dependencies
-        working-directory: stellarcred-app
-        run: npm install
+      - name: Install dependencies
+        run: npm ci
 
       - name: Type check
-        working-directory: stellarcred-app
         run: npm run typecheck
 
       - name: Lint
-        working-directory: stellarcred-app
         run: npm run lint
 
       - name: Build
-        working-directory: stellarcred-app
         run: npm run build
