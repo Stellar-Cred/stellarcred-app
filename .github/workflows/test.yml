@@ -1,0 +1,57 @@
+name: test
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+env:
+  NEXT_PUBLIC_STELLAR_NETWORK: testnet
+  NEXT_PUBLIC_CONTRACT_ID: CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+  NEXT_PUBLIC_RPC_URL: https://soroban-testnet.stellar.org
+
+jobs:
+  test:
+    name: typecheck, lint, build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout stellarcred-app
+        uses: actions/checkout@v4
+        with:
+          path: stellarcred-app
+
+      # @stellarcred/sdk is not yet published to npm, so the app depends on
+      # it via a local `file:../stellarcred-sdk` path. Check out and build
+      # that sibling repo before installing the app's dependencies.
+      - name: Checkout stellarcred-sdk
+        uses: actions/checkout@v4
+        with:
+          repository: Stellar-Cred/stellarcred-sdk
+          path: stellarcred-sdk
+
+      - name: Install Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Build SDK dependency
+        working-directory: stellarcred-sdk
+        run: |
+          npm ci
+          npm run build
+
+      - name: Install app dependencies
+        working-directory: stellarcred-app
+        run: npm install
+
+      - name: Type check
+        working-directory: stellarcred-app
+        run: npm run typecheck
+
+      - name: Lint
+        working-directory: stellarcred-app
+        run: npm run lint
+
+      - name: Build
+        working-directory: stellarcred-app
+        run: npm run build
