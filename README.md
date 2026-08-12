@@ -9,6 +9,10 @@
 ![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)
 ![Drips Wave](https://img.shields.io/badge/Drips-Wave-F59E0B)
 
+**Live app:** [stellarcred-app.vercel.app](https://stellarcred-app.vercel.app/)
+
+![StellarCred landing page](docs/screenshot.png)
+
 ## What is StellarCred
 
 StellarCred is the first on-chain behavioral reputation and credential
