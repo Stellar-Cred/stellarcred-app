@@ -1,4 +1,4 @@
-import { calculateProgressToNextTier, ScoreTier } from "@stellarcred/sdk";
+import { calculateProgressToNextTier, ScoreTier } from "@stellar-cred/sdk";
 
 const TIER_MIN: Record<ScoreTier, number> = {
   [ScoreTier.Newcomer]: 0,

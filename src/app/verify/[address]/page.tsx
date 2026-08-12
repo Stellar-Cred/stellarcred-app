@@ -1,8 +1,8 @@
 "use client";
 
 import { use, useState } from "react";
-import type { Credential } from "@stellarcred/sdk";
-import { credentialIcon, timeAgo, truncateAddress } from "@stellarcred/sdk";
+import type { Credential } from "@stellar-cred/sdk";
+import { credentialIcon, timeAgo, truncateAddress } from "@stellar-cred/sdk";
 
 import { CREDENTIAL_TYPES } from "@/lib/credentialTypes";
 import { getStellarCredClient } from "@/lib/stellarcred";

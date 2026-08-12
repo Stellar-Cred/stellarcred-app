@@ -1,5 +1,5 @@
-import type { Credential } from "@stellarcred/sdk";
-import { credentialIcon, timeAgo, truncateAddress } from "@stellarcred/sdk";
+import type { Credential } from "@stellar-cred/sdk";
+import { credentialIcon, timeAgo, truncateAddress } from "@stellar-cred/sdk";
 
 const TYPE_COLORS: Record<string, string> = {
   PaymentRecord: "border-emerald-500/40 bg-emerald-500/10",

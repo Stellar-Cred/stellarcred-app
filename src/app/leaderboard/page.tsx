@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { getScoreTier, truncateAddress } from "@stellarcred/sdk";
+import { getScoreTier, truncateAddress } from "@stellar-cred/sdk";
 
 import { TierBadge } from "@/components/TierBadge";
 import { getStellarCredClient } from "@/lib/stellarcred";

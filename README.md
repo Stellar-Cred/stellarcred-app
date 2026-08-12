@@ -20,19 +20,19 @@ credentials, browse the leaderboard and registered issuers, and manage your
 own profile.
 
 - Contracts: [stellarcred-contracts](https://github.com/Stellar-Cred/stellarcred-contracts)
-- SDK: [@stellarcred/sdk](https://github.com/Stellar-Cred/stellarcred-sdk)
+- SDK: [@stellar-cred/sdk](https://github.com/Stellar-Cred/stellarcred-sdk)
 
 ## Tech Stack
 
 - Next.js 14 (App Router)
 - TypeScript 5 (strict)
 - Tailwind CSS 3
-- `@stellarcred/sdk` for all on-chain reads/writes and the Freighter wallet
+- `@stellar-cred/sdk` for all on-chain reads/writes and the Freighter wallet
   adapter
 
 ## Local Setup
 
-`@stellarcred/sdk` is not yet published to npm, so this app depends on it
+`@stellar-cred/sdk` is not yet published to npm, so this app depends on it
 via a local `file:../stellarcred-sdk` path — clone it as a sibling
 directory first. `dev`/`build` are pinned to `--webpack` because Turbopack
 (Next 16's default bundler) can't currently resolve dependencies symlinked

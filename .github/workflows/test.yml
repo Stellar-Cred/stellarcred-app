@@ -20,7 +20,7 @@ jobs:
         with:
           path: stellarcred-app
 
-      # @stellarcred/sdk is not yet published to npm, so the app depends on
+      # @stellar-cred/sdk is not yet published to npm, so the app depends on
       # it via a local `file:../stellarcred-sdk` path. Check out and build
       # that sibling repo before installing the app's dependencies.
       - name: Checkout stellarcred-sdk

@@ -29,7 +29,7 @@ Where `type` is one of `feat`, `fix`, `refactor`, `test`, `docs`, or `chore`.
 
 ## Development setup
 
-This app depends on `@stellarcred/sdk`, which is not yet published to npm.
+This app depends on `@stellar-cred/sdk`, which is not yet published to npm.
 Clone it as a sibling directory before installing:
 
 ```bash

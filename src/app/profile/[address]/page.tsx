@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import { getScoreTier, truncateAddress } from "@stellarcred/sdk";
+import { getScoreTier, truncateAddress } from "@stellar-cred/sdk";
 
 import { CopyButton } from "@/components/CopyButton";
 import { CredentialCard } from "@/components/CredentialCard";

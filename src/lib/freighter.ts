@@ -2,7 +2,7 @@ import {
   connectWallet,
   getPublicKey,
   isFreighterInstalled,
-} from "@stellarcred/sdk";
+} from "@stellar-cred/sdk";
 
 const isBrowser = typeof window !== "undefined";
 

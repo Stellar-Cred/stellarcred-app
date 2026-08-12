@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { credentialIcon } from "@stellarcred/sdk";
+import { credentialIcon } from "@stellar-cred/sdk";
 
 import { AddressSearch } from "@/components/AddressSearch";
 import { CREDENTIAL_TYPES } from "@/lib/credentialTypes";

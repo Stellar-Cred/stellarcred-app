@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { getScoreColor, getScoreTier } from "@stellarcred/sdk";
+import { getScoreColor, getScoreTier } from "@stellar-cred/sdk";
 import { TierBadge } from "./TierBadge";
 
 const RADIUS = 70;

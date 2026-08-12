@@ -1,4 +1,4 @@
-import { ScoreTier } from "@stellarcred/sdk";
+import { ScoreTier } from "@stellar-cred/sdk";
 
 const TIER_STYLES: Record<ScoreTier, string> = {
   [ScoreTier.Newcomer]: "bg-slate-700 text-slate-200",

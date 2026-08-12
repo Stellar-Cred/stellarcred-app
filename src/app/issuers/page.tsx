@@ -1,4 +1,4 @@
-import { truncateAddress } from "@stellarcred/sdk";
+import { truncateAddress } from "@stellar-cred/sdk";
 
 import { getStellarCredClient } from "@/lib/stellarcred";
 

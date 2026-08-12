@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useIdentity, useWallet } from "@stellarcred/sdk/hooks";
+import { useIdentity, useWallet } from "@stellar-cred/sdk/hooks";
 
 import { CredentialCard } from "@/components/CredentialCard";
 import { ProgressToNextTier } from "@/components/ProgressToNextTier";

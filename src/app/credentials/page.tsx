@@ -1,4 +1,4 @@
-import { credentialIcon } from "@stellarcred/sdk";
+import { credentialIcon } from "@stellar-cred/sdk";
 
 import { CREDENTIAL_TYPES } from "@/lib/credentialTypes";
 

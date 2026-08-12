@@ -1,7 +1,7 @@
 "use client";
 
-import { truncateAddress } from "@stellarcred/sdk";
-import { useWallet } from "@stellarcred/sdk/hooks";
+import { truncateAddress } from "@stellar-cred/sdk";
+import { useWallet } from "@stellar-cred/sdk/hooks";
 
 export function WalletConnect() {
   const { publicKey, connect, disconnect, isConnected } = useWallet();

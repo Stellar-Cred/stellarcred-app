@@ -2,7 +2,7 @@ import {
   StellarCredClient,
   configureStellarCred,
   type StellarCredNetwork,
-} from "@stellarcred/sdk";
+} from "@stellar-cred/sdk";
 
 const network = (process.env.NEXT_PUBLIC_STELLAR_NETWORK ||
   "testnet") as StellarCredNetwork;
